@@ -1,6 +1,4 @@
 <?php
-$isContinue = true;
-
 main(true);
 
 /**
@@ -112,7 +110,7 @@ function zip($fileToZip): string
  */
 function cleanAllNotOriginalImages($filesAndFolders)
 {
-    $regex = '/-[0-9]{2,}x[0-9]{2,}\.jpg|-[0-9]{2,}x[0-9]{2,}\.png|-[0-9]{2,}x[0-9]{2,}\.gif|-[0-9]{2,}x[0-9]{2,}\.bmp/m';
+    $regex = '/\d+x\d+\.\w{3,}$/m';
 
     foreach ($filesAndFolders as $ff) {
         if (is_file($ff)) {
